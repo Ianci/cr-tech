@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: #EDE9FE;
+  background: #08071A;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08071A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7C3AED;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A78BFA;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7C3AED #08071A;
+}
+
+/* Gradient utility */
+.bg-accent-gradient {
+  background: linear-gradient(135deg, #4C1D95, #7C3AED, #A78BFA);
+}
+
+.bg-btn-gradient {
+  background: linear-gradient(135deg, #4C1D95, #7C3AED);
+}
+
+/* Purple glow */
+.shadow-purple-glow {
+  box-shadow: 0 0 24px rgba(124, 58, 237, 0.2);
+}
+
+.shadow-purple-glow-lg {
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.3);
+}
+
+/* Pulsing dot animation */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
