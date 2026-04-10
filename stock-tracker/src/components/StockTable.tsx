@@ -1,15 +1,15 @@
 'use client'
 
+import type { Stock } from '@/types/stock'
 import {
-  useReactTable,
+  flexRender,
   getCoreRowModel,
   getSortedRowModel,
-  flexRender,
+  useReactTable,
   type ColumnDef,
   type SortingState,
 } from '@tanstack/react-table'
 import { useMemo, useState } from 'react'
-import type { Stock } from '@/types/stock'
 
 interface StockTableProps {
   data: Stock[]
@@ -27,46 +27,64 @@ function StockCard({ item }: { item: Stock }) {
 
   return (
     <div
-      className={`${bgClass} ${borderClass} rounded-xl border p-4`}
-      style={{ boxShadow: '0 0 16px rgba(124, 58, 237, 0.15)' }}
+      className={`${bgClass} ${borderClass} rounded-lg border p-3`}
+      style={{ boxShadow: '0 0 12px rgba(124, 58, 237, 0.12)' }}
     >
-      <p className="font-semibold text-base text-txt-primary">
+      <p className="font-semibold text-sm text-txt-primary">
         {item.model} — {item.storage}
       </p>
 
-      <div className="mt-2 space-y-1">
+      <div className="mt-1.5 space-y-0.5">
         <p>
-          <span className="text-xs uppercase text-txt-secondary tracking-wide">Color: </span>
-          <span className={`text-sm ${qty === 0 ? 'text-accent-light' : qty <= 2 ? 'text-accent-low-text' : 'text-txt-primary'}`}>
+          <span className="text-[10px] uppercase text-txt-secondary tracking-wide">
+            Color:{' '}
+          </span>
+          <span
+            className={`text-xs ${qty === 0 ? 'text-accent-light' : qty <= 2 ? 'text-accent-low-text' : 'text-txt-primary'}`}
+          >
             {item.color}
           </span>
         </p>
         <p>
-          <span className="text-xs uppercase text-txt-secondary tracking-wide">Condición: </span>
-          <span className={`inline-flex px-2 py-0.5 rounded-full text-xs font-medium ${
-            item.condition === 'Nuevo'
-              ? 'bg-accent-purple/20 text-accent-light'
-              : 'bg-accent-deep/30 text-accent-low-text'
-          }`}>
+          <span className="text-[10px] uppercase text-txt-secondary tracking-wide">
+            Condición:{' '}
+          </span>
+          <span
+            className={`inline-flex px-1.5 py-0.5 rounded-full text-[10px] font-medium ${
+              item.condition === 'Nuevo'
+                ? 'bg-accent-purple/20 text-accent-light'
+                : 'bg-accent-deep/30 text-accent-low-text'
+            }`}
+          >
             {item.condition}
           </span>
         </p>
       </div>
 
-      <div className="mt-3 flex items-center justify-between">
+      <div className="mt-2 flex items-center justify-between">
         <p>
-          <span className="text-xs uppercase text-txt-secondary tracking-wide">Precio: </span>
-          <span className={`text-sm font-medium ${qty === 0 ? 'text-accent-light' : qty <= 2 ? 'text-accent-low-text' : 'text-txt-primary'}`}>
-            ${item.price.toLocaleString('es-AR', { minimumFractionDigits: 0 })}
+          <span className="text-[10px] uppercase text-txt-secondary tracking-wide">
+            Precio:{' '}
+          </span>
+          <span
+            className={`text-xs font-medium ${qty === 0 ? 'text-accent-light' : qty <= 2 ? 'text-accent-low-text' : 'text-txt-primary'}`}
+          >
+            US${Math.round(item.price).toLocaleString('en-US')}
           </span>
         </p>
         <p>
-          <span className="text-xs uppercase text-txt-secondary tracking-wide">Stock: </span>
+          <span className="text-[10px] uppercase text-txt-secondary tracking-wide">
+            Stock:{' '}
+          </span>
           {qty === 0 ? (
-            <span className="text-sm font-semibold text-accent-light">Sin stock</span>
+            <span className="text-xs font-semibold text-accent-light">
+              Sin stock
+            </span>
           ) : (
-            <span className={`text-sm font-medium ${qty <= 2 ? 'text-accent-low-text' : 'text-txt-primary'}`}>
-              {qty} uds
+            <span
+              className={`text-xs font-medium ${qty <= 2 ? 'text-accent-low-text' : 'text-txt-primary'}`}
+            >
+              {qty}
             </span>
           )}
         </p>
@@ -83,7 +101,11 @@ export default function StockTable({ data }: StockTableProps) {
       {
         accessorKey: 'model',
         header: 'Modelo',
-        cell: (info) => <span className="font-medium text-txt-primary">{info.getValue<string>()}</span>,
+        cell: (info) => (
+          <span className="font-medium text-txt-primary">
+            {info.getValue<string>()}
+          </span>
+        ),
       },
       {
         accessorKey: 'storage',
@@ -99,11 +121,13 @@ export default function StockTable({ data }: StockTableProps) {
         cell: (info) => {
           const val = info.getValue<string>()
           return (
-            <span className={`inline-flex px-2 py-0.5 rounded-full text-xs font-medium ${
-              val === 'Nuevo'
-                ? 'bg-accent-purple/20 text-accent-light'
-                : 'bg-accent-deep/30 text-accent-low-text'
-            }`}>
+            <span
+              className={`inline-flex px-2 py-0.5 rounded-full text-xs font-medium ${
+                val === 'Nuevo'
+                  ? 'bg-accent-purple/20 text-accent-light'
+                  : 'bg-accent-deep/30 text-accent-low-text'
+              }`}
+            >
               {val}
             </span>
           )
@@ -114,7 +138,7 @@ export default function StockTable({ data }: StockTableProps) {
         header: 'Precio',
         cell: (info) => {
           const val = info.getValue<number>()
-          return `$${val.toLocaleString('es-AR', { minimumFractionDigits: 0 })}`
+          return `US$${Math.round(val).toLocaleString('en-US')}`
         },
       },
       {
@@ -123,7 +147,9 @@ export default function StockTable({ data }: StockTableProps) {
         cell: (info) => {
           const qty = info.getValue<number>()
           if (qty === 0) {
-            return <span className="font-semibold text-accent-light">Sin stock</span>
+            return (
+              <span className="font-semibold text-accent-light">Sin stock</span>
+            )
           }
           return qty
         },
@@ -144,9 +170,11 @@ export default function StockTable({ data }: StockTableProps) {
   return (
     <>
       {/* Mobile card layout */}
-      <div className="md:hidden space-y-3">
+      <div className="md:hidden space-y-2">
         {data.length === 0 && (
-          <p className="py-8 text-center text-txt-secondary">No hay productos en el inventario</p>
+          <p className="py-8 text-center text-txt-secondary">
+            No hay productos en el inventario
+          </p>
         )}
         {data.map((item) => (
           <StockCard key={item.id} item={item} />
@@ -166,7 +194,10 @@ export default function StockTable({ data }: StockTableProps) {
                     className="px-4 py-3 text-left text-xs font-bold text-white uppercase tracking-[0.05em] cursor-pointer hover:text-white/80 select-none"
                   >
                     <div className="flex items-center gap-1">
-                      {flexRender(header.column.columnDef.header, header.getContext())}
+                      {flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
                       {{
                         asc: ' ↑',
                         desc: ' ↓',
@@ -185,15 +216,25 @@ export default function StockTable({ data }: StockTableProps) {
               else if (qty <= 2) rowClass = 'bg-dark-low-stock'
 
               return (
-                <tr key={row.id} className={`${rowClass} hover:bg-accent-purple/10 transition-colors`}>
+                <tr
+                  key={row.id}
+                  className={`${rowClass} hover:bg-accent-purple/10 transition-colors`}
+                >
                   {row.getVisibleCells().map((cell) => (
                     <td
                       key={cell.id}
                       className={`px-4 py-3 text-sm whitespace-nowrap ${
-                        qty === 0 ? 'text-accent-light' : qty <= 2 ? 'text-accent-low-text' : 'text-txt-secondary'
+                        qty === 0
+                          ? 'text-accent-light'
+                          : qty <= 2
+                            ? 'text-accent-low-text'
+                            : 'text-txt-secondary'
                       }`}
                     >
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
                     </td>
                   ))}
                 </tr>
@@ -201,7 +242,10 @@ export default function StockTable({ data }: StockTableProps) {
             })}
             {table.getRowModel().rows.length === 0 && (
               <tr>
-                <td colSpan={columns.length} className="px-4 py-8 text-center text-txt-secondary">
+                <td
+                  colSpan={columns.length}
+                  className="px-4 py-8 text-center text-txt-secondary"
+                >
                   No hay productos en el inventario
                 </td>
               </tr>
