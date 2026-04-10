@@ -1,5 +1,12 @@
 import type { Metadata } from 'next'
+import { Space_Grotesk } from 'next/font/google'
 import './globals.css'
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+  weight: ['700'],
+})
 
 export const metadata: Metadata = {
   title: 'iPhone Store — Stock en vivo',
@@ -12,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
+    <html lang="es" className={spaceGrotesk.variable}>
       <body className="min-h-screen bg-dark-main antialiased">{children}</body>
     </html>
   )
