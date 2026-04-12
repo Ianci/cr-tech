@@ -52,7 +52,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href=""
+            href="https://www.instagram.com/i_stockglobal/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-txt-secondary hover:text-accent-light transition-colors"

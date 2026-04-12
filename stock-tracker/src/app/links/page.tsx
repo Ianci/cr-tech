@@ -102,7 +102,11 @@ const links: LinkItem[] = [
     internal: true,
   },
   { icon: WhatsAppIcon, label: 'Contactanos por WhatsApp', href: '' },
-  { icon: InstagramIcon, label: 'Seguinos en Instagram', href: '' },
+  {
+    icon: InstagramIcon,
+    label: 'Seguinos en Instagram',
+    href: 'https://www.instagram.com/i_stockglobal/',
+  },
   { icon: TikTokIcon, label: 'Seguinos en TikTok', href: '' },
   { icon: FacebookIcon, label: 'Seguinos en Facebook', href: '' },
 ]
@@ -171,7 +175,7 @@ export default function LinksPage() {
 
           {/* Instagram */}
           <a
-            href=""
+            href="https://www.instagram.com/i_stockglobal/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"

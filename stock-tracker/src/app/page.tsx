@@ -103,9 +103,14 @@ const links: LinkItem[] = [
   //   label: 'Ver stock disponible',
   //   href: '/stock',
   //   internal: true,
+
   // },
   { icon: WhatsAppIcon, label: 'Grupo de Difusión - MAYORISTAS', href: '' },
-  { icon: InstagramIcon, label: 'Seguinos en Instagram', href: '' },
+  {
+    icon: InstagramIcon,
+    label: 'Seguinos en Instagram',
+    href: 'https://www.instagram.com/i_stockglobal/',
+  },
   { icon: WhatsAppIcon, label: 'Chatea con nosotros', href: '' },
   { icon: TikTokIcon, label: 'Seguinos en TikTok', href: '' },
   // { icon: FacebookIcon, label: 'Seguinos en Facebook', href: '' },
@@ -180,7 +185,7 @@ export default function Home() {
 
             {/* Instagram */}
             <a
-              href=""
+              href="https://www.instagram.com/i_stockglobal/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
