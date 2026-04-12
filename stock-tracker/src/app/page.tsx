@@ -104,7 +104,7 @@ const links: LinkItem[] = [
   //   href: '/stock',
   //   internal: true,
   // },
-  { icon: WhatsAppIcon, label: 'Grupo de Difusión - MAYORISTAS 🚀', href: '' },
+  { icon: WhatsAppIcon, label: 'Grupo de Difusión - MAYORISTAS', href: '' },
   { icon: InstagramIcon, label: 'Seguinos en Instagram', href: '' },
   { icon: WhatsAppIcon, label: 'Chatea con nosotros', href: '' },
   { icon: TikTokIcon, label: 'Seguinos en TikTok', href: '' },
@@ -235,8 +235,9 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <Footer />
-
+      <div className="hidden md:block">
+        <Footer />
+      </div>
       <style>{`
         .social-icon {
           display: inline-flex;
