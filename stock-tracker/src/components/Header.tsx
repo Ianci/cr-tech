@@ -11,7 +11,7 @@ export default function Header({ showLogout, onLogout }: HeaderProps) {
   return (
     <header
       className="bg-dark-card border-y border-dark-border"
-      style={{ boxShadow: '0 1px 12px rgba(124, 58, 237, 0.2)' }}
+      style={{ boxShadow: '0 1.1px 12px rgba(124, 58, 237, 0.2)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
