@@ -135,7 +135,7 @@ export default function Home() {
       <main className="flex-1 w-full flex justify-center">
         <div
           className="w-full max-w-[480px] mx-auto flex flex-col items-center px-6"
-          style={{ paddingTop: '48px', paddingBottom: '80px' }}
+          style={{ paddingTop: '48px', paddingBottom: '64px' }}
         >
           {/* Avatar */}
           <Image

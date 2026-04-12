@@ -113,7 +113,7 @@ export default function AboutPage() {
 
       <main
         className="flex-1 w-full max-w-[720px] mx-auto px-6"
-        style={{ paddingTop: '64px', paddingBottom: '100px' }}
+        style={{ paddingTop: '64px', paddingBottom: '64px' }}
       >
         {/* ── 1. Hero ── */}
         <section className="about-fade-in text-center">
