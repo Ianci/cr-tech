@@ -1,23 +1,27 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer className="fixed bottom-0 left-0 right-0 z-50 h-16 bg-dark-card border-t border-dark-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
         {/* Left — Brand */}
         <div className="flex items-center gap-2">
-          <span
-            className="font-[var(--font-space-grotesk)] text-[1.4rem] font-extrabold select-none"
-            style={{
-              letterSpacing: '-0.03em',
-              background: 'linear-gradient(135deg, #4C1D95, #7C3AED)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              filter: 'drop-shadow(0 0 4px rgba(124, 58, 237, 0.5))',
-            }}
-          >
-            iStock Global
-          </span>
+          <Link href="/" className="no-underline">
+            <span
+              className="font-[var(--font-space-grotesk)] text-[1.4rem] font-extrabold select-none"
+              style={{
+                letterSpacing: '-0.03em',
+                background: 'linear-gradient(135deg, #4C1D95, #7C3AED)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                filter: 'drop-shadow(0 0 4px rgba(124, 58, 237, 0.5))',
+              }}
+            >
+              iStock Global
+            </span>
+          </Link>
         </div>
 
         {/* Center — Copyright */}
