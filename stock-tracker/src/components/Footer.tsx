@@ -1,12 +1,11 @@
 'use client'
 
-
 export default function Footer() {
   return (
     <footer className="fixed bottom-0 left-0 right-0 z-50 h-16 bg-dark-card border-t border-dark-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
         {/* Left — Brand */}
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
           <span
             className="font-[var(--font-space-grotesk)] text-[1.4rem] font-extrabold select-none"
             style={{
@@ -17,13 +16,13 @@ export default function Footer() {
               filter: 'drop-shadow(0 0 4px rgba(124, 58, 237, 0.5))',
             }}
           >
-            CR TECH
+            iStock Global
           </span>
         </div>
 
         {/* Center — Copyright */}
         <p className="hidden md:block text-xs text-txt-secondary">
-          &copy; 2026 CR Tech Importaciones. Todos los derechos reservados.
+          &copy; 2026 iStock Global LLC. Todos los derechos reservados.
         </p>
 
         {/* Right — Social icons */}

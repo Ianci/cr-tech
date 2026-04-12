@@ -12,7 +12,7 @@ export default function CRMonogram() {
         filter: 'drop-shadow(0 0 4px rgba(124, 58, 237, 0.5))',
       }}
     >
-      CR
+      iStock Global
     </span>
   )
 }
