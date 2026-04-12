@@ -128,11 +128,11 @@ function CardContent({ icon, label }: { icon: ReactNode; label: string }) {
 export default function Home() {
   return (
     <div
-      className="min-h-screen w-full pb-16"
+      className="min-h-screen w-full flex flex-col"
       style={{ backgroundColor: '#08071A' }}
     >
       <Header />
-      <main className="w-full flex justify-center">
+      <main className="flex-1 w-full flex justify-center">
         <div
           className="w-full max-w-[480px] mx-auto flex flex-col items-center px-6"
           style={{ paddingTop: '48px', paddingBottom: '80px' }}

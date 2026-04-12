@@ -10,9 +10,9 @@ export default function StockPage() {
   const { data, loading, lastUpdated } = useStock()
 
   return (
-    <div className="min-h-screen bg-dark-main pb-16">
+    <div className="min-h-screen bg-dark-main flex flex-col">
       <Header />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="mb-4">
           <LastUpdated timestamp={lastUpdated} />
         </div>

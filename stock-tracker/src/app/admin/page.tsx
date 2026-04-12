@@ -23,9 +23,9 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-dark-main pb-16">
+    <div className="min-h-screen bg-dark-main flex flex-col">
       <Header showLogout onLogout={handleLogout} />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex items-center justify-between mb-4">
           <LastUpdated timestamp={lastUpdated} />
           <button

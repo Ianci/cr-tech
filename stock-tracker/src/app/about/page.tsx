@@ -106,13 +106,13 @@ const STATS = [
 export default function AboutPage() {
   return (
     <div
-      className="min-h-screen w-full pb-16"
+      className="min-h-screen w-full flex flex-col"
       style={{ backgroundColor: '#08071A' }}
     >
       <Header />
 
       <main
-        className="w-full max-w-[720px] mx-auto px-6"
+        className="flex-1 w-full max-w-[720px] mx-auto px-6"
         style={{ paddingTop: '64px', paddingBottom: '100px' }}
       >
         {/* ── 1. Hero ── */}
