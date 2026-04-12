@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
-import './globals.css'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -14,8 +13,8 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'iPhone Store — Stock en vivo',
-  description: 'Inventario en tiempo real de iPhone Store',
+  title: 'iStock Global Importaciones',
+  description: 'iPhones | Mayorista | Tecnología',
 }
 
 export default function RootLayout({
@@ -25,7 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={spaceGrotesk.variable}>
-      <body className={`${inter.className} min-h-screen bg-dark-main antialiased`}>
+      <body
+        className={`${inter.className} min-h-screen bg-dark-main antialiased`}
+      >
         {children}
       </body>
     </html>

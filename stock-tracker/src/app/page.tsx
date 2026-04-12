@@ -6,7 +6,7 @@ import Link from 'next/link'
 import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title: '@iStock Global Importaciones',
+  title: 'iStock Global Importaciones',
   description: 'iPhones | Mayorista | Tecnología',
 }
 
