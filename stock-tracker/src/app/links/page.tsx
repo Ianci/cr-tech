@@ -101,13 +101,21 @@ const links: LinkItem[] = [
     href: '/',
     internal: true,
   },
-  { icon: WhatsAppIcon, label: 'Contactanos por WhatsApp', href: '' },
+  {
+    icon: WhatsAppIcon,
+    label: 'Contactanos por WhatsApp',
+    href: 'https://chat.whatsapp.com/Ew0EhTVGfK2C6iZNWQEh8f',
+  },
   {
     icon: InstagramIcon,
     label: 'Seguinos en Instagram',
     href: 'https://www.instagram.com/i_stockglobal/',
   },
-  { icon: TikTokIcon, label: 'Seguinos en TikTok', href: '' },
+  {
+    icon: TikTokIcon,
+    label: 'Seguinos en TikTok',
+    href: 'https://www.tiktok.com/@_renzoleo_?_r=1&_t=ZS-96AfQ2PmBT5',
+  },
   { icon: FacebookIcon, label: 'Seguinos en Facebook', href: '' },
 ]
 
